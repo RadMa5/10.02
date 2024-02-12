@@ -8,10 +8,14 @@ public class Parser {
     // private String
 
     public static void parser(String[] string) throws IllegalArgumentException{
-        // // if (string[3].length() != 8) throw new IllegalArgumentException();
-        // if (string[3].charAt(2) != '.' && string[3].charAt(5) != '.') throw new IllegalArgumentException();
-        // // if (string[4].length() != 11 || string[4].length() != 12) throw new IllegalArgumentException();
-        // if (string[5] != "f" || string[5] != "m") throw new IllegalArgumentException();
+        String dob = string[3];
+        String num = string[4];
+        String sex = string[5];
+        char[] testch = dob.toCharArray();
+        if (dob.length() != 10) throw new IllegalArgumentException();
+        if (testch[2] != '.') throw new IllegalArgumentException();
+        if (testch[5] != '.') throw new IllegalArgumentException();
+        // if (sex.equals("f") || sex.equals("m")) throw new IllegalArgumentException();
 
         String name = string[0] + ".txt";
         try(FileWriter fw = new FileWriter(name, true)){
